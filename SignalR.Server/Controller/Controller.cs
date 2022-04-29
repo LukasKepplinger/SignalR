@@ -67,7 +67,11 @@ namespace SignalR.Server.Controller
 
         public void DoPca9685()
         {
-            
+            Pca9685.Initialize();
+            Pca9685.CreatePwmPort(0);
+            Pca9685.CreatePwmPort(1);
+            Pca9685.SetPin(0, true);
+            Pca9685.SetPin(1, false);
         }
 
 

@@ -31,5 +31,6 @@ using (var scope = app.Services.CreateScope())
 
 app.MapHub<ChatHub>("/chat");
 app.MapHub<IoHub>("/io");
+app.MapHub<CornHub>("/corn");
 
 app.Run();

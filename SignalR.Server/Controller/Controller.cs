@@ -7,9 +7,12 @@ namespace SignalR.Server.Controller
         public Controller()
         {
             GpioController = new GpioController();
+            Meadow.Hardware.II2cBus i2CBus = new II2cBusImp();
+            Pca9685 = new Meadow.Foundation.ICs.IOExpanders.Pca9685(i2CBus);
         }
 
         public GpioController GpioController { get; }
+        Meadow.Foundation.ICs.IOExpanders.Pca9685 Pca9685 { get; set; }
 
         public bool SetPin(int pin, bool setTo)
         {
@@ -64,7 +67,7 @@ namespace SignalR.Server.Controller
 
         public void DoPca9685()
         {
-            Meadow.Foundation.ICs.IOExpanders.Pca9685 pca9685 = new Meadow.Foundation.ICs.IOExpanders.Pca9685();
+            
         }
 
 
